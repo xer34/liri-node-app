@@ -48,6 +48,21 @@ function concertThis() {
             "in... um " + events[0].venue.city + ", " + events[0].venue.country
           );
           console.log("Here's the Date: " + events[0].formatted_datetime);
+          fs.appendFile(
+            "log.txt",
+            "\n" + inquirerResponse.concertName + "\n" +
+              "-------------------" +
+              "\n" +
+              ("Looks like that will be at " + events[0].venue.place) +
+              "\n" +
+              ("in... um " + events[0].venue.city) +
+              ", " +
+              events[0].venue.country +
+              "\n" +
+              ("Here's the Date: " + events[0].formatted_datetime) +
+              "\n" +
+              "-------------------"
+          );
         });
     });
 }
@@ -190,15 +205,15 @@ function doIt() {
         .catch(err => console.error(err));
     }
     if (randomCommand === array[2]) {
-      bandsintown
-        .getArtistEventList("Backstreet Boys")
-        .then(function(events) {
-          console.log("Looks like the Backstreet Boys will be at " + events[0].venue.place);
-          console.log(
-            "in... um " + events[0].venue.city + ", " + events[0].venue.country
-          );
-          console.log("Here's the Date: " + events[0].formatted_datetime);
-        });
+      bandsintown.getArtistEventList("Backstreet Boys").then(function(events) {
+        console.log(
+          "Looks like the Backstreet Boys will be at " + events[0].venue.place
+        );
+        console.log(
+          "in... um " + events[0].venue.city + ", " + events[0].venue.country
+        );
+        console.log("Here's the Date: " + events[0].formatted_datetime);
+      });
     }
     //----------------
   });

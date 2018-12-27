@@ -4,6 +4,8 @@ Hello and welcome to LIRI.
 Much like Apple's SIRI, LIRI will interpret YOUR command line interface commands and do cool things for you while you wait!
 Run down on the commands LIRI will take in for you.
 
+This app is useful to learn the principals of using node.js to access API's, display information in the console, and record information to external files.
+
 1. `node liri.js concert-this`
    Liri will ask you what band you are looking for!
 
